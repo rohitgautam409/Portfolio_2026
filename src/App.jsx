@@ -1,13 +1,13 @@
 import React, { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
-import ModelExp from './components/ModelExp'
+import ModelExp from './components/three/ModelExp'
 
 export default function App() {
   return (
-    <div className='h-screen '>
+    <div className='h-screen'>
       <Canvas
         camera={{
-          position: [0, 0, -9],
+          position: [0, 0, 9],
           fov: 45,
         }}
         gl={{

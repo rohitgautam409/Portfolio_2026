@@ -1,12 +1,9 @@
-import { Center, ContactShadows, Environment, Lightformer, OrbitControls } from "@react-three/drei";
+import { Environment, Lightformer } from "@react-three/drei"
 
-import Iphone17ProModels from "./models/IPhone_17_Pro_Model";
+export default function Lights() {
 
-
-export default function ModelExp() {
     return (
-        <>
-
+        <group>
             <ambientLight intensity={0.5} />
 
 
@@ -75,30 +72,7 @@ export default function ModelExp() {
                     />
                 </group>
             </Environment>
+        </group>
 
-
-            <group>
-                <Center>
-
-                    <Iphone17ProModels scale={40} />
-                </Center>
-            </group>
-
-
-            <ContactShadows
-                position={[0, -3.5, 0]}
-                opacity={0.7}
-                scale={12}
-                blur={2.2}
-                far={4}
-            />
-
-
-            <OrbitControls
-                enableZoom={true}
-                enablePan={true}
-                enableRotate={true}
-            />
-        </>
-    );
+    )
 }
