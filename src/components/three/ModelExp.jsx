@@ -82,7 +82,7 @@ export default function ModelExp() {
                 position={[0, -3.5, 0]}
                 opacity={0.7}
                 scale={12}
-                blur={2.2}
+                blur={2}
                 far={4}
             />
         </>
