@@ -4,7 +4,14 @@ body {
     background-color: white;
 }
 
-/* Hide 3D HTML screen when viewing phone from behind (backpanel) */
+.iphone-html-screen {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "SF Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    image-rendering: -webkit-optimize-contrast;
+}
+
 .iphone-html-screen,
 .iphone-html-screen * {
     backface-visibility: hidden !important;

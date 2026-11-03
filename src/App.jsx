@@ -6,11 +6,14 @@ export default function App() {
   return (
     <div className='h-screen'>
       <Canvas
+        dpr={[1, 3.5]}
         camera={{
           position: [0, 0, 9],
           fov: 45,
         }}
         gl={{
+          antialias: true,
+          powerPreference: 'high-performance',
           toneMappingExposure: 1.05,
         }}
       >

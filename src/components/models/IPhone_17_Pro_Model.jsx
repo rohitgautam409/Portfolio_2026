@@ -24,9 +24,10 @@ export default function Iphone17ProModels({
 
     if (materials.PaletteMaterial002) {
       materials.PaletteMaterial002.color.set('#ffffff')
-      materials.PaletteMaterial002.opacity = 0.01
+      materials.PaletteMaterial002.opacity = 0
       materials.PaletteMaterial002.transparent = true
-      materials.PaletteMaterial002.roughness = 0.05
+      materials.PaletteMaterial002.roughness = 0
+      materials.PaletteMaterial002.depthWrite = false
       materials.PaletteMaterial002.needsUpdate = true
     }
   }, [materials, texture])
