@@ -3,3 +3,14 @@
 body {
     background-color: white;
 }
+
+/* Hide 3D HTML screen when viewing phone from behind (backpanel) */
+.iphone-html-screen,
+.iphone-html-screen * {
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+}
+
+.iphone-html-screen > div {
+    transform-style: preserve-3d !important;
+}

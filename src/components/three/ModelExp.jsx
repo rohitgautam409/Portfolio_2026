@@ -1,17 +1,24 @@
-
 import { useRef } from "react";
+import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
 import {
     Center,
     ContactShadows,
     PresentationControls,
+    Html,
 } from "@react-three/drei";
-
+import IphoneScreen from "../iphone/IphoneScreen";
 import Iphone17ProModels from "../models/IPhone_17_Pro_Model";
 import Lights from "./Lights";
 
+// Reusable scratch vectors to avoid garbage collection inside useFrame
+const _screenPos = new THREE.Vector3();
+const _screenNormal = new THREE.Vector3();
+const _toCamera = new THREE.Vector3();
+
 function AnimatedIphone() {
     const groupRef = useRef(null);
+    const screenAnchorRef = useRef(null);
     const progress = useRef(0);
 
     const initialRotation = -Math.PI;
@@ -20,6 +27,7 @@ function AnimatedIphone() {
     useFrame((state, delta) => {
         if (!groupRef.current) return;
 
+        // Entrance animation
         progress.current = Math.min(
             progress.current + delta / 2,
             1
@@ -27,13 +35,37 @@ function AnimatedIphone() {
 
         const eased = 1 - Math.pow(1 - progress.current, 4);
 
-
         groupRef.current.position.y = -10 + 10 * eased;
-
-
         groupRef.current.rotation.y =
             initialRotation +
             (finalRotation - initialRotation) * eased;
+
+        // 100% Guaranteed Backface Culling:
+        // Compute the true mathematical angle between screen normal and camera view vector
+        if (screenAnchorRef.current) {
+            screenAnchorRef.current.getWorldPosition(_screenPos);
+            screenAnchorRef.current.getWorldDirection(_screenNormal);
+
+            _toCamera.copy(state.camera.position).sub(_screenPos).normalize();
+            const dot = _screenNormal.dot(_toCamera);
+
+            // dot > 0.08 means the front face of the screen is pointing toward the camera
+            // dot <= 0.08 means the phone has rotated sideways or to the backpanel
+            const isFacingCamera = dot > 0.08;
+
+            const htmlElements = document.querySelectorAll('.iphone-html-screen');
+            for (let i = 0; i < htmlElements.length; i++) {
+                const el = htmlElements[i];
+                const targetVisibility = isFacingCamera ? 'visible' : 'hidden';
+                const targetOpacity = isFacingCamera ? '1' : '0';
+
+                if (el.style.visibility !== targetVisibility) {
+                    el.style.visibility = targetVisibility;
+                    el.style.opacity = targetOpacity;
+                    el.style.pointerEvents = isFacingCamera ? 'auto' : 'none';
+                }
+            }
+        }
     });
 
     return (
@@ -45,12 +77,24 @@ function AnimatedIphone() {
             <Center>
                 <Iphone17ProModels scale={40} />
             </Center>
+
+            {/* Screen Anchor Group with strict normal tracking */}
+            <group
+                ref={screenAnchorRef}
+                position={[0, 0, -0.17]}
+                rotation={[0, Math.PI, 0]}
+            >
+                <Html
+                    transform
+                    wrapperClass="iphone-html-screen"
+                    scale={0.275}
+                >
+                    <IphoneScreen />
+                </Html>
+            </group>
         </group>
     );
 }
-
-
-
 
 export default function ModelExp() {
     const controlsConfig = {
@@ -80,9 +124,9 @@ export default function ModelExp() {
 
             <ContactShadows
                 position={[0, -3.5, 0]}
-                opacity={0.7}
+                opacity={0.4}
                 scale={12}
-                blur={2}
+                blur={1.5}
                 far={4}
             />
         </>
