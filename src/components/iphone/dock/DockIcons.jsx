@@ -18,13 +18,13 @@ export function AppStoreIcon() {
         <motion.div
             whileTap={{ scale: 0.92 }}
             transition={{ duration: 0.12 }}
-            className="w-[68px] h-[68px] rounded-[17px] overflow-hidden cursor-pointer select-none shadow-md shadow-black/20"
+            className="w-[72px] h-[72px] rounded-[17px] overflow-hidden cursor-pointer select-none shadow-md shadow-black/20"
         >
             <img
-                src="/Icons/pngegg%20(3).png"
+                src="/Icons/ios_appstore.png"
                 alt="App Store"
                 onError={handleImgError}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain scale-125"
                 draggable={false}
             />
         </motion.div>
@@ -36,10 +36,10 @@ export function PhotosIcon() {
         <motion.div
             whileTap={{ scale: 0.92 }}
             transition={{ duration: 0.12 }}
-            className="w-[68px] h-[68px] rounded-[17px] overflow-hidden cursor-pointer select-none shadow-md shadow-black/20 bg-white"
+            className="w-[72px] h-[72px] rounded-[17px] overflow-hidden cursor-pointer select-none shadow-md shadow-black/20 bg-white"
         >
             <img
-                src="/Icons/pngegg%20(1).png"
+                src="/Icons/ios_photos.png"
                 alt="Photos"
                 onError={handleImgError}
                 className="w-full h-full object-cover"
@@ -54,7 +54,7 @@ export function MailIcon() {
         <motion.div
             whileTap={{ scale: 0.92 }}
             transition={{ duration: 0.12 }}
-            className="w-[68px] h-[68px] rounded-[17px] overflow-hidden cursor-pointer select-none shadow-md shadow-blue-500/20"
+            className="w-[72px] h-[72px] rounded-[17px] overflow-hidden cursor-pointer select-none shadow-md shadow-blue-500/20"
         >
             <img
                 src="/Icons/Mail_(iOS).svg"
@@ -72,10 +72,10 @@ export function FilesIcon() {
         <motion.div
             whileTap={{ scale: 0.92 }}
             transition={{ duration: 0.12 }}
-            className="w-[68px] h-[68px] rounded-[17px] overflow-hidden cursor-pointer select-none shadow-md shadow-black/20 bg-white"
+            className="w-[72px] h-[72px] rounded-[17px] overflow-hidden cursor-pointer select-none shadow-md shadow-black/20 bg-white"
         >
             <img
-                src="/Icons/pngegg%20(4).png"
+                src="/Icons/ios_file.png"
                 alt="Files"
                 onError={handleImgError}
                 className="w-full h-full object-cover"
@@ -84,3 +84,22 @@ export function FilesIcon() {
         </motion.div>
     )
 }
+
+export function NotesIcon() {
+    return (
+        <motion.div
+            whileTap={{ scale: 0.92 }}
+            transition={{ duration: 0.12 }}
+            className="w-[68px] h-[68px] rounded-[17px] overflow-hidden cursor-pointer select-none shadow-md shadow-black/20"
+        >
+            <img
+                src="/Icons/ios_notes.png"
+                alt="Notes"
+                onError={handleImgError}
+                className="w-full h-full object-cover"
+                draggable={false}
+            />
+        </motion.div>
+    )
+}
+

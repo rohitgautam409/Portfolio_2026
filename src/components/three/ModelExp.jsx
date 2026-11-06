@@ -69,7 +69,7 @@ function AnimatedIphone() {
             rotation={[0, initialRotation, 0]}
         >
             <Center>
-                <Iphone17ProModels scale={40} />
+                <Iphone17ProModels scale={44} />
             </Center>
 
             <group

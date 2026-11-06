@@ -4,7 +4,7 @@ import WeatherWidget from './WeatherWidget'
 
 export default function WidgetsRow() {
     return (
-        <div className="flex items-center justify-between  w-full mt-2">
+        <div className="flex items-center justify-between gap-4  w-full mt-2">
             <GithubWidget />
             <WeatherWidget />
         </div>
