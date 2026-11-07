@@ -30,7 +30,7 @@ export default function GithubWidget() {
             transition={{ duration: 0.12 }}
             className="flex flex-col items-center gap-1.5 cursor-pointer select-none no-underline"
         >
-            <div className="w-[188px] h-[188px] rounded-[26px] bg-[#1f1f22] border border-white/10 p-4 flex items-center justify-center shadow-lg shadow-black/40">
+            <div className="w-[188px] h-[188px] rounded-[26px] bg-[#1f1f22] border border-white/10 p-3 flex items-center justify-center shadow-lg shadow-black/40">
                 <div className="grid grid-cols-7 rounded-[26px] overflow-hidden gap-1 w-full h-full p-0.5">
                     {grid.map((row, rIdx) =>
                         row.map((val, cIdx) => (
