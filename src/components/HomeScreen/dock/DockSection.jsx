@@ -5,7 +5,7 @@ import HomeIndicator from './HomeIndicator'
 
 export default function DockSection() {
     return (
-        <div className="flex flex-col items-center gap-6 w-full">
+        <div className="flex flex-col items-center gap-4 w-full">
             <SearchPill />
             <Dock />
 
