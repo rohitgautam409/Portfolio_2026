@@ -42,10 +42,10 @@ export default function AppGrid({ activeApp, onOpenApp }) {
             <div className="flex flex-col items-center gap-[6px]">
                 <motion.button
                     type="button"
-                    whileTap={{ scale: 0.92 }}
-                    transition={{ duration: 0.12 }}
-
-                    className="w-[80px] h-[80px] rounded-[16px] overflow-hidden cursor-pointer select-none flex items-center justify-centerd outline-none focus:outline-none"
+                    layoutId="spotify-app"
+                    onClick={() => onOpenApp?.('spotify')}
+                    transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                    className="w-[80px] h-[80px] rounded-[16px] overflow-hidden cursor-pointer select-none flex items-center justify-center outline-none focus:outline-none"
                 >
                     <img
                         src='/Icons/spotify.png'
@@ -55,21 +55,19 @@ export default function AppGrid({ activeApp, onOpenApp }) {
                     />
                 </motion.button>
                 <span
-                    className="text-white text-small font-semibold text-center select-none"
-
+                    className="text-[16px] font-bold text-white/95 tracking-tight drop-shadow-md"
                 >
                     Spotify
                 </span>
             </div>
 
-
             <div className="flex flex-col items-center gap-[6px]">
                 <motion.button
                     type="button"
-                    whileTap={{ scale: 0.92 }}
-                    transition={{ duration: 0.12 }}
-
-                    className="w-[80px] h-[80px] rounded-[16px] overflow-hidden cursor-pointer select-none flex items-center justify-centerd outline-none focus:outline-none"
+                    layoutId="notes-app"
+                    onClick={() => onOpenApp?.('notes')}
+                    transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                    className="w-[80px] h-[80px] rounded-[16px] overflow-hidden cursor-pointer select-none flex items-center justify-center outline-none focus:outline-none"
                 >
                     <img
                         src='/Icons/ios_notes.png'
@@ -79,8 +77,7 @@ export default function AppGrid({ activeApp, onOpenApp }) {
                     />
                 </motion.button>
                 <span
-                    className="text-white text-small font-semibold text-center select-none"
-
+                    className="text-[16px] font-bold text-white/95 tracking-tight drop-shadow-md"
                 >
                     Notes
                 </span>
@@ -91,9 +88,9 @@ export default function AppGrid({ activeApp, onOpenApp }) {
             <div className="flex flex-col items-center gap-[6px]">
                 <motion.button
                     type="button"
+                    layoutId="settings-app"
                     onClick={() => onOpenApp?.('settings')}
-                    whileTap={{ scale: 0.92 }}
-                    transition={{ duration: 0.12 }}
+                    transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                     className="w-[80px] h-[80px] rounded-[16px] overflow-hidden cursor-pointer select-none flex items-center justify-center outline-none focus:outline-none bg-[#2c2c2e]"
                 >
                     <img
@@ -104,7 +101,7 @@ export default function AppGrid({ activeApp, onOpenApp }) {
                     />
                 </motion.button>
                 <span
-                    className="text-white text-small font-semibold text-center select-none"
+                    className="text-[16px] font-bold text-white/95 tracking-tight drop-shadow-md"
                 >
                     Settings
                 </span>

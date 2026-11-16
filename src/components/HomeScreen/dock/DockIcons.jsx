@@ -13,93 +13,80 @@ const handleImgError = (e) => {
     }
 }
 
-export function AppStoreIcon() {
+export function AppStoreIcon({ onClick }) {
     return (
         <motion.div
-            whileTap={{ scale: 0.92 }}
-            transition={{ duration: 0.12 }}
+            layoutId="appstore-app"
+            onClick={onClick}
+            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
             className="w-[80px] h-[80px] rounded-[17px] overflow-hidden cursor-pointer select-none shadow-md shadow-black/20"
         >
             <img
                 src="/Icons/ios_appstore.png"
                 alt="App Store"
                 onError={handleImgError}
-                className="w-full h-full object-contain scale-125"
+                className="w-full h-full object-contain scale-125 pointer-events-none"
                 draggable={false}
             />
         </motion.div>
     )
 }
 
-export function PhotosIcon() {
+export function PhotosIcon({ onClick }) {
     return (
         <motion.div
-            whileTap={{ scale: 0.92 }}
-            transition={{ duration: 0.12 }}
+            layoutId="photos-app"
+            onClick={onClick}
+            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
             className="w-[80px] h-[80px] rounded-[17px] overflow-hidden cursor-pointer select-none shadow-md shadow-black/20 bg-white"
         >
             <img
                 src="/Icons/ios_photos.png"
                 alt="Photos"
                 onError={handleImgError}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover pointer-events-none"
                 draggable={false}
             />
         </motion.div>
     )
 }
 
-export function MailIcon() {
+export function MailIcon({ onClick }) {
     return (
         <motion.div
-            whileTap={{ scale: 0.92 }}
-            transition={{ duration: 0.12 }}
+            layoutId="mail-app"
+            onClick={onClick}
+            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
             className="w-[80px] h-[80px] rounded-[17px] overflow-hidden cursor-pointer select-none shadow-md shadow-blue-500/20"
         >
             <img
                 src="/Icons/Mail_(iOS).svg"
                 alt="Mail"
                 onError={handleImgError}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover pointer-events-none"
                 draggable={false}
             />
         </motion.div>
     )
 }
 
-export function FilesIcon() {
+export function FilesIcon({ onClick }) {
     return (
         <motion.div
-            whileTap={{ scale: 0.92 }}
-            transition={{ duration: 0.12 }}
+            layoutId="files-app"
+            onClick={onClick}
+            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
             className="w-[80px] h-[80px] rounded-[17px] overflow-hidden cursor-pointer select-none shadow-md shadow-black/20 bg-white"
         >
             <img
                 src="/Icons/ios_file.png"
                 alt="Files"
                 onError={handleImgError}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover pointer-events-none"
                 draggable={false}
             />
         </motion.div>
     )
 }
 
-export function NotesIcon() {
-    return (
-        <motion.div
-            whileTap={{ scale: 0.92 }}
-            transition={{ duration: 0.12 }}
-            className="w-[80px] h-[80px] rounded-[17px] overflow-hidden cursor-pointer select-none shadow-md shadow-black/20"
-        >
-            <img
-                src="/Icons/ios_notes.png"
-                alt="Notes"
-                onError={handleImgError}
-                className="w-full h-full object-cover"
-                draggable={false}
-            />
-        </motion.div>
-    )
-}
 

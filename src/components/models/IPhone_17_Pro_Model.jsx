@@ -28,7 +28,6 @@ export default function Iphone17ProModels(props) {
         <mesh geometry={nodes.iPhone_17_Pro_7.geometry} material={materials.PaletteMaterial001} />
         <mesh geometry={nodes.iPhone_17_Pro_8.geometry} material={materials.PaletteMaterial002} />
       </group>
-      {/* Physical OLED screen plane: pure black base underneath the projection screen */}
       <mesh geometry={nodes.iPhone_17_Pro001.geometry} rotation={[Math.PI / 2, 0, 0]}>
         <meshBasicMaterial color="#000000" />
       </mesh>

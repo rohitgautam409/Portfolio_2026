@@ -14,7 +14,6 @@ export default function App() {
       className="relative w-full h-screen overflow-hidden bg-white select-none"
       style={{ transformStyle: 'preserve-3d' }}
     >
-      {/* 3D WebGL Canvas */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <Canvas
           dpr={[1, 2]}
@@ -34,13 +33,11 @@ export default function App() {
         </Canvas>
       </div>
 
-      {/* CSS 3D Camera Projection Frame */}
       <div
         ref={cameraElRef}
         className="absolute inset-0 pointer-events-none z-10"
         style={{ transformStyle: 'preserve-3d' }}
       >
-        {/* Projection screen — 470 × 1014 px, radius 70 px */}
         <div
           ref={screenElRef}
           className="absolute top-0 left-0 pointer-events-auto will-change-transform"

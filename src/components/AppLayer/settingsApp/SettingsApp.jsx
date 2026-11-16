@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'
 
 function ChevronLeft({ className = "h-5 w-5" }) {
@@ -85,91 +85,68 @@ export default function SettingsApp({
     education = DEFAULT_EDUCATION,
     skills = DEFAULT_SKILLS,
 }) {
-    const [isComplete, setIsComplete] = useState(false)
-
     const handleDownload = () => {
         window.open('https://github.com/rohitgautam409', '_blank')
     }
 
     const handleClose = () => {
-        setIsComplete(false)
         onClose?.()
     }
 
     return (
         <motion.div
-            initial={{
-                opacity: 0,
-                scale: 0.18,
-                x: 90,
-                y: -150,
-                borderRadius: '70px',
-            }}
-            animate={{
-                opacity: 1,
-                scale: 1,
-                x: 0,
-                y: 0,
-                borderRadius: '70px',
-            }}
-            exit={{
-                opacity: 0,
-                scale: 0.22,
-                x: 90,
-                y: -150,
-                transition: { duration: 0.24, ease: [0.32, 0, 0.67, 0] },
-            }}
+            layoutId="settings-app"
             transition={{
-                duration: 0.38,
-                ease: [0.16, 1, 0.3, 1],
+                type: 'spring',
+                stiffness: 300,
+                damping: 30,
             }}
-            onAnimationComplete={() => setIsComplete(true)}
-            className="absolute inset-0 z-30 flex h-full w-full select-none flex-col overflow-hidden bg-black text-white"
-            style={{
-                transformOrigin: '70% 38%',
-                transform: isComplete ? 'none' : undefined,
-            }}
+            className="absolute inset-0 z-30 flex h-full w-full select-none flex-col overflow-hidden bg-black text-white rounded-[70px]"
         >
-            <div className="flex-1 overflow-y-auto overflow-x-hidden scrollbar-none bg-red-500">
-                {/* Sticky Navigation Bar */}
-                <div className="sticky top-10 z-20 flex items-center px-6 pb-3 pt-12 border-b border-white/5">
-                    {/* Left column (fixed 90px width) */}
-                    <div className="w-[90px] flex items-center justify-start">
-                        <button
-                            type="button"
-                            onClick={handleClose}
-                            className="flex items-center gap-2 text-md font-semibold text-white cursor-pointer group active:scale-95 transition-transform"
-                        >
-                            <div className="p-2 rounded-full bg-neutral-800 group-hover:bg-neutral-700 transition-colors">
-                                <ChevronLeft className="h-5 w-5 text-blue-400" />
-                            </div>
-                            <span className="text-white text-[15px]">Back</span>
-                        </button>
-                    </div>
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="flex-1 flex flex-col h-full w-full overflow-hidden"
+            >
+                <div className="flex-1 overflow-y-auto overflow-x-hidden scrollbar-none">
+                    <div className="sticky top-10 z-20 flex items-center px-6 pb-3 pt-12 border-b border-white/5">
+                        <div className="w-[90px] flex items-center justify-start">
+                            <button
+                                type="button"
+                                onClick={handleClose}
+                                className="flex items-center gap-2 text-md font-semibold text-white cursor-pointer group active:scale-95 transition-transform"
+                            >
+                                <div className="p-2 rounded-full bg-neutral-800 group-hover:bg-neutral-700 transition-colors">
+                                    <ChevronLeft className="h-5 w-5 text-blue-400" />
+                                </div>
+                                <span className="text-white text-[15px]">Back</span>
+                            </button>
+                        </div>
 
-                    {/* Center column (flex-1 centered) */}
-                    <div className="flex-1 flex items-center justify-center">
-                        <div className="rounded-full border border-white/10 bg-neutral-800/80 px-5 py-1.5 text-center text-[15px] font-medium text-white shadow-[0_4px_12px_rgba(0,0,0,0.4)]">
-                            Resume
+                        <div className="flex-1 flex items-center justify-center">
+                            <div className="rounded-full border border-white/10 bg-neutral-800/80 px-5 py-1.5 text-center text-[15px] font-medium text-white shadow-[0_4px_12px_rgba(0,0,0,0.4)]">
+                                Resume
+                            </div>
+                        </div>
+
+                        <div className="w-[90px] flex items-center justify-end">
+                            <button
+                                type="button"
+                                onClick={handleDownload}
+                                className="flex cursor-pointer items-center justify-center rounded-full bg-neutral-800 p-2 text-blue-400 ring-1 ring-white/10 active:scale-95 transition-all hover:bg-neutral-700"
+                                title="Download Resume"
+                            >
+                                <Download className="h-5 w-5" />
+                            </button>
                         </div>
                     </div>
 
-                    {/* Right column (fixed 90px width) */}
-                    <div className="w-[90px] flex items-center justify-end">
-                        <button
-                            type="button"
-                            onClick={handleDownload}
-                            className="flex cursor-pointer items-center justify-center rounded-full bg-neutral-800 p-2 text-blue-400 ring-1 ring-white/10 active:scale-95 transition-all hover:bg-neutral-700"
-                            title="Download Resume"
-                        >
-                            <Download className="h-5 w-5" />
-                        </button>
-                    </div>
+
+
                 </div>
-
-
-
-            </div>
+            </motion.div>
         </motion.div>
     )
 }
