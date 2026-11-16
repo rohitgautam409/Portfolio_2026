@@ -130,117 +130,45 @@ export default function SettingsApp({
                 transform: isComplete ? 'none' : undefined,
             }}
         >
-            <div className="flex-1 overflow-y-auto overflow-x-hidden scrollbar-none">
+            <div className="flex-1 overflow-y-auto overflow-x-hidden scrollbar-none bg-red-500">
                 {/* Sticky Navigation Bar */}
-                <div className="sticky top-0 z-20 flex items-center justify-between px-6 pb-3 pt-12 bg-black border-b border-white/5">
-                    <button
-                        type="button"
-                        onClick={handleClose}
-                        className="flex items-center gap-2 text-md font-semibold text-white cursor-pointer group active:scale-95 transition-transform"
-                    >
-                        <div className="p-2 rounded-full bg-neutral-800 group-hover:bg-neutral-700 transition-colors">
-                            <ChevronLeft className="h-5 w-5 text-blue-400" />
-                        </div>
-                        <span className="text-white text-[15px]">Back</span>
-                    </button>
-
-                    <div className="rounded-full border border-white/10 bg-neutral-800/80 px-5 py-1.5 text-center text-[15px] font-medium text-white shadow-[0_4px_12px_rgba(0,0,0,0.4)]">
-                        Resume
-                    </div>
-
-                    <button
-                        type="button"
-                        onClick={handleDownload}
-                        className="flex cursor-pointer items-center justify-center rounded-full bg-neutral-800 p-2 text-blue-400 ring-1 ring-white/10 active:scale-95 transition-all hover:bg-neutral-700"
-                        title="Download Resume"
-                    >
-                        <Download className="h-5 w-5" />
-                    </button>
-                </div>
-
-                {/* Resume Content Body */}
-                <div className="px-6 pb-16 pt-4">
-                    <div className="text-[34px] font-bold text-white tracking-tight">
-                        Resume
-                    </div>
-
-                    <div className="mt-3">
-                        <p className="text-[20px] font-semibold text-white">Rohit Gautam</p>
-                        <div className="mt-1 flex items-center gap-2">
-                            <p className="text-[14px] text-neutral-400">Software Engineer</p>
-                            <span className="h-1 w-1 rounded-full bg-neutral-500"></span>
-                            <p className="text-[14px] text-neutral-400">Occasionally Designer</p>
-                        </div>
-                        <p className="mt-1 text-[13px] text-neutral-400">New Delhi, India</p>
-                    </div>
-
-                    {/* Experience Section */}
-                    <div className="mt-6">
-                        <p className="mb-3 pl-1 text-[13px] font-bold tracking-wider uppercase text-neutral-400">
-                            Experience
-                        </p>
-                        <div className="rounded-[22px] bg-neutral-900/90 border border-white/5 p-4 space-y-4">
-                            {experience.map((item, index) => (
-                                <div key={item.company} className="relative pl-8">
-                                    {index !== experience.length - 1 && (
-                                        <div className="absolute left-[11px] top-6 h-[calc(100%+12px)] w-[1.5px] bg-neutral-800" />
-                                    )}
-
-                                    <div className={`absolute left-0 top-0.5 flex h-6 w-6 items-center justify-center rounded-md text-[11px] font-bold ${item.accent}`}>
-                                        {item.short}
-                                    </div>
-
-                                    <div className="ml-2">
-                                        <p className="text-[14px] font-semibold text-white">{item.company}</p>
-                                        <p className="mt-0.5 text-[12px] text-blue-400 font-medium">{item.role}</p>
-                                        <p className="mt-0.5 text-[11px] text-neutral-400">{item.period}</p>
-                                        <p className="mt-1.5 text-[12px] leading-relaxed text-neutral-300">{item.description}</p>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Education Section */}
-                    <div className="mt-6">
-                        <p className="mb-3 pl-1 text-[13px] font-bold tracking-wider uppercase text-neutral-400">
-                            Education
-                        </p>
-                        <div className="rounded-[22px] bg-neutral-900/90 border border-white/5 p-4 space-y-3">
-                            {education.map((item, index) => (
-                                <div key={`${item.school}-${index}`} className="flex gap-3">
-                                    <div className="mt-0.5 flex h-6 w-6 items-center justify-center rounded-md bg-blue-600 text-[11px] font-bold text-white shrink-0">
-                                        {index + 1}
-                                    </div>
-                                    <div className="flex-1">
-                                        <p className="text-[13px] font-medium text-white">{item.degree}</p>
-                                        <p className="mt-0.5 text-[12px] text-neutral-400">{item.school}</p>
-                                        <p className="mt-0.5 text-[11px] text-neutral-400">{item.period}</p>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Skills Section */}
-                    <div className="mt-6">
-                        <p className="mb-3 pl-1 text-[13px] font-bold tracking-wider uppercase text-neutral-400">
-                            Skills & Technologies
-                        </p>
-                        <div className="rounded-[22px] bg-neutral-900/90 border border-white/5 p-4">
-                            <div className="flex flex-wrap gap-2">
-                                {skills.map((skill) => (
-                                    <span
-                                        key={skill}
-                                        className="rounded-full bg-neutral-800/90 px-3.5 py-1.5 text-[12px] font-medium text-neutral-200 border border-white/5 hover:border-white/10 transition-colors"
-                                    >
-                                        {skill}
-                                    </span>
-                                ))}
+                <div className="sticky top-10 z-20 flex items-center px-6 pb-3 pt-12 border-b border-white/5">
+                    {/* Left column (fixed 90px width) */}
+                    <div className="w-[90px] flex items-center justify-start">
+                        <button
+                            type="button"
+                            onClick={handleClose}
+                            className="flex items-center gap-2 text-md font-semibold text-white cursor-pointer group active:scale-95 transition-transform"
+                        >
+                            <div className="p-2 rounded-full bg-neutral-800 group-hover:bg-neutral-700 transition-colors">
+                                <ChevronLeft className="h-5 w-5 text-blue-400" />
                             </div>
+                            <span className="text-white text-[15px]">Back</span>
+                        </button>
+                    </div>
+
+                    {/* Center column (flex-1 centered) */}
+                    <div className="flex-1 flex items-center justify-center">
+                        <div className="rounded-full border border-white/10 bg-neutral-800/80 px-5 py-1.5 text-center text-[15px] font-medium text-white shadow-[0_4px_12px_rgba(0,0,0,0.4)]">
+                            Resume
                         </div>
                     </div>
+
+                    {/* Right column (fixed 90px width) */}
+                    <div className="w-[90px] flex items-center justify-end">
+                        <button
+                            type="button"
+                            onClick={handleDownload}
+                            className="flex cursor-pointer items-center justify-center rounded-full bg-neutral-800 p-2 text-blue-400 ring-1 ring-white/10 active:scale-95 transition-all hover:bg-neutral-700"
+                            title="Download Resume"
+                        >
+                            <Download className="h-5 w-5" />
+                        </button>
+                    </div>
                 </div>
+
+
+
             </div>
         </motion.div>
     )

@@ -36,7 +36,7 @@ const APPS = [
 
 export default function AppGrid({ activeApp, onOpenApp }) {
     return (
-        <div className="w-full grid grid-cols-4 justify-items-center gap-y-4">
+        <div className="w-full grid grid-cols-4 justify-items-center gap-y-4 ">
 
 
             <div className="flex flex-col items-center gap-[6px]">
@@ -45,7 +45,7 @@ export default function AppGrid({ activeApp, onOpenApp }) {
                     whileTap={{ scale: 0.92 }}
                     transition={{ duration: 0.12 }}
 
-                    className="w-[72px] h-[72px] rounded-[16px] overflow-hidden cursor-pointer select-none flex items-center justify-centerd outline-none focus:outline-none"
+                    className="w-[80px] h-[80px] rounded-[16px] overflow-hidden cursor-pointer select-none flex items-center justify-centerd outline-none focus:outline-none"
                 >
                     <img
                         src='/Icons/spotify.png'
@@ -55,7 +55,7 @@ export default function AppGrid({ activeApp, onOpenApp }) {
                     />
                 </motion.button>
                 <span
-                    className="text-white text-[14px] font-semibold text-center select-none"
+                    className="text-white text-small font-semibold text-center select-none"
 
                 >
                     Spotify
@@ -69,7 +69,7 @@ export default function AppGrid({ activeApp, onOpenApp }) {
                     whileTap={{ scale: 0.92 }}
                     transition={{ duration: 0.12 }}
 
-                    className="w-[72px] h-[72px] rounded-[16px] overflow-hidden cursor-pointer select-none flex items-center justify-centerd outline-none focus:outline-none"
+                    className="w-[80px] h-[80px] rounded-[16px] overflow-hidden cursor-pointer select-none flex items-center justify-centerd outline-none focus:outline-none"
                 >
                     <img
                         src='/Icons/ios_notes.png'
@@ -79,7 +79,7 @@ export default function AppGrid({ activeApp, onOpenApp }) {
                     />
                 </motion.button>
                 <span
-                    className="text-white text-[14px] font-semibold text-center select-none"
+                    className="text-white text-small font-semibold text-center select-none"
 
                 >
                     Notes
@@ -94,7 +94,7 @@ export default function AppGrid({ activeApp, onOpenApp }) {
                     onClick={() => onOpenApp?.('settings')}
                     whileTap={{ scale: 0.92 }}
                     transition={{ duration: 0.12 }}
-                    className="w-[72px] h-[72px] rounded-[16px] overflow-hidden cursor-pointer select-none flex items-center justify-center outline-none focus:outline-none bg-[#2c2c2e]"
+                    className="w-[80px] h-[80px] rounded-[16px] overflow-hidden cursor-pointer select-none flex items-center justify-center outline-none focus:outline-none bg-[#2c2c2e]"
                 >
                     <img
                         src='/Icons/ios_settings.png'
@@ -104,7 +104,7 @@ export default function AppGrid({ activeApp, onOpenApp }) {
                     />
                 </motion.button>
                 <span
-                    className="text-white text-[14px] font-semibold text-center select-none"
+                    className="text-white text-small font-semibold text-center select-none"
                 >
                     Settings
                 </span>

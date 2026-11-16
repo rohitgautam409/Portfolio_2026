@@ -9,7 +9,7 @@ export default function WeatherWidget() {
             transition={{ duration: 0.15 }}
             className="flex flex-col items-center gap-1.5 cursor-pointer select-none"
         >
-            <div className="w-[188px] h-[188px] rounded-[26px] bg-gradient-to-br from-[#5c7290] to-[#40536c] border border-white/15 p-4 flex flex-col justify-between shadow-lg shadow-black/30 text-white">
+            <div className="w-[210px] h-[210px] rounded-[36px] bg-gradient-to-br from-[#5c7290] to-[#40536c] border border-white/15 p-4 flex flex-col justify-between shadow-lg shadow-black/30 text-white">
                 <div className="flex items-center gap-1">
                     <span className="text-[18px] font-semibold tracking-tight text-white drop-shadow-sm">
                         New Delhi
@@ -17,7 +17,7 @@ export default function WeatherWidget() {
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-navigation preview-icon"><polygon points="3 11 22 2 13 21 11 13 3 11" /></svg>
                 </div>
 
-                <div className="text-[48px] font-light leading-none tracking-tighter my-0.5 drop-shadow-sm">
+                <div className="text-[64px] font-light leading-none tracking-tighter my-0.5 drop-shadow-sm">
                     23°
                 </div>
 

@@ -18,7 +18,7 @@ export function AppStoreIcon() {
         <motion.div
             whileTap={{ scale: 0.92 }}
             transition={{ duration: 0.12 }}
-            className="w-[72px] h-[72px] rounded-[17px] overflow-hidden cursor-pointer select-none shadow-md shadow-black/20"
+            className="w-[80px] h-[80px] rounded-[17px] overflow-hidden cursor-pointer select-none shadow-md shadow-black/20"
         >
             <img
                 src="/Icons/ios_appstore.png"
@@ -36,7 +36,7 @@ export function PhotosIcon() {
         <motion.div
             whileTap={{ scale: 0.92 }}
             transition={{ duration: 0.12 }}
-            className="w-[72px] h-[72px] rounded-[17px] overflow-hidden cursor-pointer select-none shadow-md shadow-black/20 bg-white"
+            className="w-[80px] h-[80px] rounded-[17px] overflow-hidden cursor-pointer select-none shadow-md shadow-black/20 bg-white"
         >
             <img
                 src="/Icons/ios_photos.png"
@@ -54,7 +54,7 @@ export function MailIcon() {
         <motion.div
             whileTap={{ scale: 0.92 }}
             transition={{ duration: 0.12 }}
-            className="w-[72px] h-[72px] rounded-[17px] overflow-hidden cursor-pointer select-none shadow-md shadow-blue-500/20"
+            className="w-[80px] h-[80px] rounded-[17px] overflow-hidden cursor-pointer select-none shadow-md shadow-blue-500/20"
         >
             <img
                 src="/Icons/Mail_(iOS).svg"
@@ -72,7 +72,7 @@ export function FilesIcon() {
         <motion.div
             whileTap={{ scale: 0.92 }}
             transition={{ duration: 0.12 }}
-            className="w-[72px] h-[72px] rounded-[17px] overflow-hidden cursor-pointer select-none shadow-md shadow-black/20 bg-white"
+            className="w-[80px] h-[80px] rounded-[17px] overflow-hidden cursor-pointer select-none shadow-md shadow-black/20 bg-white"
         >
             <img
                 src="/Icons/ios_file.png"
@@ -90,7 +90,7 @@ export function NotesIcon() {
         <motion.div
             whileTap={{ scale: 0.92 }}
             transition={{ duration: 0.12 }}
-            className="w-[68px] h-[68px] rounded-[17px] overflow-hidden cursor-pointer select-none shadow-md shadow-black/20"
+            className="w-[80px] h-[80px] rounded-[17px] overflow-hidden cursor-pointer select-none shadow-md shadow-black/20"
         >
             <img
                 src="/Icons/ios_notes.png"
