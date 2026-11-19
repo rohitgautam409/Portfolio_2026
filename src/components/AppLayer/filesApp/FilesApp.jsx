@@ -79,12 +79,7 @@ const education = [
     },
 ]
 
-const skills = [
-    'Languages: JavaScript, TypeScript, Python, C++, C#',
-    'Frameworks: React, Next.js, Node.js, Express',
-    'Databases: PostgreSQL, MongoDB, Firebase, Supabase',
-    'Design: Figma, Adobe Illustrator, Photoshop',
-]
+
 
 export default function FilesApp({ onClose }) {
     const folders = [

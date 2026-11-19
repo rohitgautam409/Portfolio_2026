@@ -54,7 +54,7 @@ export default function IphoneScreen() {
             </motion.div>
 
             <AnimatePresence>
-                {/* {activeApp === 'settings' && (
+                {activeApp === 'settings' && (
                     <SettingsApp onClose={() => setActiveApp(null)} />
                 )}
                 {activeApp === 'spotify' && (
@@ -71,7 +71,7 @@ export default function IphoneScreen() {
                 )}
                 {activeApp === 'email' && (
                     <MailApp onClose={() => setActiveApp(null)} />
-                )} */}
+                )}
                 {activeApp === 'filestorage' && (
                     <FilesApp onClose={() => setActiveApp(null)} />
                 )}

@@ -3,7 +3,9 @@ import { motion } from 'framer-motion'
 
 export default function SearchPill() {
     return (
-        <motion.div
+        <motion.a
+            href="https://www.google.com/"
+            target="_blank"
             whileTap={{ scale: 0.95, opacity: 0.85 }}
             transition={{ duration: 0.12 }}
             className="flex items-center justify-center gap-1 px-4 py-1.5 rounded-full bg-neutral-900/30 border border-white/40 cursor-pointer select-none"
@@ -20,6 +22,6 @@ export default function SearchPill() {
             <span className="text-[16px] font-semibold  text-white/95 tracking-tight">
                 Search
             </span>
-        </motion.div>
+        </motion.a>
     )
 }
