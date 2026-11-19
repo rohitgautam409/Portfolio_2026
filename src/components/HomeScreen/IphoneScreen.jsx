@@ -23,7 +23,7 @@ export default function IphoneScreen() {
                 width: '470px',
                 height: '1012px',
                 borderRadius: '70px',
-                backgroundImage: "url('/iphone-17-pro/textures/ios26-silk.avif')",
+                backgroundImage: "url('/iphone-17-pro/textures/Champion_Mentality_n_Motion.png')",
                 backfaceVisibility: 'hidden',
                 WebkitBackfaceVisibility: 'hidden',
             }}

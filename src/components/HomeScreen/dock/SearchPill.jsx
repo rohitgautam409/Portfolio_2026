@@ -8,7 +8,7 @@ export default function SearchPill() {
             target="_blank"
             whileTap={{ scale: 0.95, opacity: 0.85 }}
             transition={{ duration: 0.12 }}
-            className="flex items-center justify-center gap-1 px-4 py-1.5 rounded-full bg-neutral-900/30 border border-white/40 cursor-pointer select-none"
+            className="flex items-center justify-center gap-1 px-4 py-1.5 rounded-full bg-neutral-900/30 backdrop-blur-xl border border-white/40 cursor-pointer select-none"
         >
             <svg
                 className="w-4 h-4 fill-none stroke-white stroke-3"
